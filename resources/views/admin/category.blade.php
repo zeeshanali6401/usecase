@@ -1,6 +1,6 @@
 @extends('admin.layouts.app')
 @stack('title')
-    <title>Students</title>
+    <title>Title</title>
 @section('main-section')
 <!DOCTYPE html>
 <html lang="en">
@@ -8,7 +8,7 @@
     @livewireStyles
 </head>
 <body>
-    @livewire('student')
+    @livewire('category')
     @livewireScripts
 </body>
 </html>
