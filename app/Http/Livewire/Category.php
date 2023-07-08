@@ -10,8 +10,11 @@ use App\Http\Livewire\Session;
 class Category extends Component
 {
     public $name;
-    public $category;
+    public $category, $collection, $slug;
 
+    public function mount(){
+        $this->collection = Catagory::all();
+    }
     public function render()
     {
         return view('livewire.category');
@@ -20,7 +23,7 @@ class Category extends Component
         $category = new Catagory;
         $category->name = $this->name;
         $category->save();
-        $slug = str::slug(strtolower($this->name), '-');
-        dd($slug);
+        $this->mount();
+        $this->slug = str::slug(strtolower($this->name), '-');
     }
 }
